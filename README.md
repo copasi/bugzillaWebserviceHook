@@ -1,4 +1,4 @@
-# A Tool for commenting about Commits on Bugzilla
+# A Tool for adding Comments about Commits to Bugzilla
 Any commits which reference a Bugzilla number will be posted as comments
 on the bug. Bugs Ids are specified either as '`(bug|issue):? *#?(\d+)` on the first line or
 as `(resolves?|related|conflicts?):? *#?(\d+)` on any line of the commit message. Only one
