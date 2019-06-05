@@ -1,0 +1,2 @@
+python-bugzilla>=1.2.2
+
