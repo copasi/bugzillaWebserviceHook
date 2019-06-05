@@ -112,7 +112,6 @@ def application(environ, start_response):
             start_response('401 Unauthorized', response_headers)
             return [b'Invalid signature\n']
 
-    
     # Convert the post data to a string so we can start actually using it
     # JSON is required to be in utf-8, utf-16, or utf-32, but github only ever
     # uses utf-8, praise be, so just go ahead and assume that
@@ -189,8 +188,8 @@ def get_comments(data):
         https://developer.github.com/v3/activity/events/types/#pushevent
     """
     def indent(lines):
-        padding = '   '
-        return ' - ' + (padding + '\n').join(lines.split('\n'))
+        padding = '  '
+        return (padding + '\n').join(lines.split('\n'))
 
     bugs = get_bugs(data)
     branch = data["ref"].replace("refs/heads/", "")
@@ -203,7 +202,7 @@ def get_comments(data):
         for sha in bugs[bug].keys():
             commit = bugs[bug][sha]
 
-            comment = "\n{:s}\n\n{:}".format(commit["url"], indent(commit["message"]))
+            comment = "\n{:s}\n{:s}\n".format(commit["url"], indent(commit["message"]))
 
             if not bug in comments:
                 comments[bug] = comment
