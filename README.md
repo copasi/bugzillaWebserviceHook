@@ -24,7 +24,7 @@ from GitHub.
 * *GHBH_HTTP_PORT* - The HTTP port to listen on if running the webhook as a
 standalone service.
 
-On GitHub
+#### On GitHub
 Go to the settings for the repository you want to connect to Bugzilla. Under
 "Webhooks & Services," add a webhook. Put in the URL for the web service,
 select "application/json" for the content type, set a secret if you're using
